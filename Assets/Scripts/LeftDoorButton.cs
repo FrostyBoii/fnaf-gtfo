@@ -1,16 +1,14 @@
+using System.Data.Common;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class LeftDoorButton : MonoBehaviour
+public class LeftDoorButton : MonoBehaviour, IPointerClickHandler
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public LeftDoorController leftDoorController;
+    public void OnPointerClick(PointerEventData eventData)
     {
-        
+        Debug.Log("Button clicked");
+        leftDoorController.changeDoorState();   
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

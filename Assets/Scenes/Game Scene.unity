@@ -223,7 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d0396576d237e64aa0f1272bee04a6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  doorSpeed: 10
+  doorSpeed: 30
 --- !u!1 &40443792
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,6 +928,7 @@ GameObject:
   m_Component:
   - component: {fileID: 882897693}
   - component: {fileID: 882897692}
+  - component: {fileID: 882897694}
   m_Layer: 0
   m_Name: Left Door Model
   m_TagString: Untagged
@@ -1009,6 +1010,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &882897694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 882897691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58c7646c5d97f65439cac6dd29363f47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LeftDoorController
+  doorSpeed: 30
 --- !u!1 &1080973678
 GameObject:
   m_ObjectHideFlags: 0
@@ -1468,6 +1482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fb9a78b82b53db4188096a47fe0df8c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  leftDoorController: {fileID: 882897694}
 --- !u!61 &1560537128
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1512,7 +1527,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.5, y: 1.5}
   m_EdgeRadius: 0
 --- !u!1 &1649736206
 GameObject:
@@ -1665,7 +1680,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 1.5, y: 1.5}
   m_EdgeRadius: 0
 --- !u!1 &1979019976
 GameObject:
