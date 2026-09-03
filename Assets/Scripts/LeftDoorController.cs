@@ -13,7 +13,7 @@ public class LeftDoorController : MonoBehaviour
 
     private Vector2 openDoorPosition;
     private Vector2 closedDoorPosition;
-    public float doorSpeed = 30f;
+    public float doorSpeed = 40f;
 
     private DoorState currentDoorState;
     void Start()
