@@ -15,6 +15,9 @@ public class LeftDoorController : MonoBehaviour
     private Vector2 closedDoorPosition;
     public float doorSpeed = 40f;
 
+    public AudioSource doorCloseSound;
+    public AudioSource doorOpenSound;
+
     private DoorState currentDoorState;
     void Start()
     {
@@ -42,6 +45,7 @@ public class LeftDoorController : MonoBehaviour
 
     private IEnumerator closeDoor()
     {
+        doorCloseSound.Play();
         while (transform.position != (Vector3)closedDoorPosition)
         {
             transform.position = Vector2.MoveTowards(transform.position, closedDoorPosition, doorSpeed * Time.deltaTime);
@@ -54,13 +58,14 @@ public class LeftDoorController : MonoBehaviour
 
     private IEnumerator openDoor()
     {
+        doorOpenSound.Play();
         while(transform.position != (Vector3)openDoorPosition)
         {
             transform.position = Vector2.MoveTowards(transform.position, openDoorPosition, doorSpeed * Time.deltaTime);
 
             yield return null;
         }
-
+        
         currentDoorState = DoorState.Open;
     }
 }

@@ -19,10 +19,9 @@ public class CameraAnimator : MonoBehaviour
     public Vector2 closedPosition;
     public Vector2 openPosition;
 
-    public float cameraSpeed = 15.0f;
+    public float cameraSpeed = 20.0f;
 
-    //public AudioSource cameraOpenSound;
-    //public AudioSource cameraCloseSound;
+    public AudioSource cameraMoveSound;
 
     void Start()
     {
@@ -47,7 +46,7 @@ public class CameraAnimator : MonoBehaviour
     {
         cameraButton.enabled = false;
         currentCameraState = CameraState.Opening;
-        //cameraOpenSound.Play();
+        cameraMoveSound.Play();
         yield return StartCoroutine(slideTo(openPosition));
         currentCameraState = CameraState.Open;
         cameraButton.enabled = true;
@@ -57,7 +56,7 @@ public class CameraAnimator : MonoBehaviour
     {
         cameraButton.enabled = false;
         currentCameraState = CameraState.Closing;
-        //cameraCloseSound.Play();
+        cameraMoveSound.Play();
         yield return StartCoroutine(slideTo(closedPosition));
         currentCameraState = CameraState.Closed;
         cameraButton.enabled = true;
