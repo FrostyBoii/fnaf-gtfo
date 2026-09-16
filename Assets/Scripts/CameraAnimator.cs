@@ -12,6 +12,9 @@ public class CameraAnimator : MonoBehaviour
         Closing
     }
 
+    public GameObject leftDoorButton;
+    public GameObject rightDoorButton;
+
     public GameObject cameraBackground;
     public Image cameraButton;
 
@@ -27,6 +30,9 @@ public class CameraAnimator : MonoBehaviour
     {
         currentCameraState = CameraState.Closed;
         cameraBackground.transform.position = closedPosition;
+
+        leftDoorButton = GameObject.Find("Left Door Button");
+        rightDoorButton = GameObject.Find("Right Door Button");
     } 
 
     public void changeCameraState()
@@ -44,20 +50,30 @@ public class CameraAnimator : MonoBehaviour
 
     private IEnumerator openCamera()
     {
+        rightDoorButton.SetActive(false);
+        leftDoorButton.SetActive(false);
+
         cameraButton.enabled = false;
         currentCameraState = CameraState.Opening;
+
         cameraMoveSound.Play();
         yield return StartCoroutine(slideTo(openPosition));
+
         currentCameraState = CameraState.Open;
         cameraButton.enabled = true;
     }
 
     private IEnumerator closeCamera()
     {
+        rightDoorButton.SetActive(true);
+        leftDoorButton.SetActive(true);
+
         cameraButton.enabled = false;
         currentCameraState = CameraState.Closing;
+
         cameraMoveSound.Play();
         yield return StartCoroutine(slideTo(closedPosition));
+
         currentCameraState = CameraState.Closed;
         cameraButton.enabled = true;
     }
