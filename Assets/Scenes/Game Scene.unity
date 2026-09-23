@@ -3460,6 +3460,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6a2d9556cf0c66b4aa49a10d1c10c607, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraAnimator
+  leftDoorButton: {fileID: 0}
+  rightDoorButton: {fileID: 0}
   cameraBackground: {fileID: 2026605222}
   cameraButton: {fileID: 1682721313}
   closedPosition: {x: 0, y: -16.4}
